@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&family=Lobster&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poetsen+One&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&family=Lobster&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poetsen+One&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kalnia+Glaze:wght@100..700&family=Lobster&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poetsen+One&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kalnia+Glaze:wght@100..700&family=Lobster&family=Pacifico&family=Parisienne&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poetsen+One&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap');
+        #navbar{
+            background-image: linear-gradient(to right, #f4da95 , #faf3da 80%,#f4da95);
+        }
+        #main{
+            background-image: linear-gradient(to bottom,#f4da95,#f6dad9);
+        }
+        #main2{
+            
+            background-color: #f6dad9;
+        }
+        #happy{
+            font-family: "Playfair Display", serif;
+        }
+        #gradient{
+            /* background-image:  */
+            /* linear-gradient(to top right,#f2ab5b 20%,#f7aaa2); */
+            /* border-radius: 10rem;
+            transform: skew(2deg); */
+        }
+        #background{
+            /* background-image: url(./Images/luxury-perfume-bottle-white-background_1021079-1209.jpg); */
+        }
+        #smell{
+            font-family: "Pacifico", cursive;
+        }
+        #essence{
+            font-family: "Great Vibes", cursive;
+        }
+        #best{
+            font-family: "Great Vibes", cursive;
+        }
+        #Unique{
+            font-family: "Parisienne", cursive;
+        }
+        #boxshadow{
+            box-shadow: -15px 15px 8px #f1c69b,-20px 25px 10px #f4dac9 ;
+        }
+        .active{
+            scale: 1;
+        }
+        .overlay{
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.329);
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.5s ease-in-out;
+        }
+        .activeoverlay{
+            opacity: 1;
+            pointer-events: initial;
+        }
+        .modal{
+            background-image: linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-radius: 5rem;
+            width: auto;
+            height: auto;
+            padding: 2rem;
+            font-family: "Great Vibes", cursive;
+            position: fixed;
+            transform: translate(25vw,30vh);
+            font-size: 6rem;
+            z-index: 3;
+            scale: 0;
+            transition:0.5s ease-in-out;
+        }
+        #autoradius{
+            width: fit-content;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        #bg-grad{
+            box-shadow: 30px -10px 10px #000000;
+        }
+        .heading{
+            text-shadow:10px 8px 8px rgb(60, 49, 49) ;
+        }
+    </style>
+    <title>Aroma Hub</title>
+</head>
+<body>
+    <div id="wrapper" class="h-[100vh] overflow-x-hidden z-0">
+    <!-- Navbar -->
+     <div id="navbar" class="flex justify-around pt-4 md:p-4 z-0">
+        <div class="w-[10vw] flex justify-center items-center h-8">
+            <a href="http://">
+            <img src="./Images/menu_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="" class="md:w-10">
+            </a>   
+        </div>
+        <div id="happy" class="flex gap-2 w-[80vw] h-8 items-center justify-center md:text-2xl md:gap-x-24">
+            <div class="hidden md:block"><a href="http://">Home</a></div>
+            <div class="hidden md:block"><a href="collection.html">Collection</a></div>
+            <div id="smell" class="md:text-[2.5rem] border"><a href="">Aroma Hub</a></div>
+            <div class="hidden md:block"><a href="men.html">Men</a></div>
+            <div class="hidden md:block"><a href="women.html">Women</a></div>
+        </div>
+        <div class=" w-[10vw] flex justify-center h-8 items-center">
+            <a href="http://">
+            <img src="./Images/shopping_bag_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="" class="md:w-10">
+            </a>   
+        </div>
+     </div>
+     <!-- WelcomE modal -->
+      <div class="modal">
+            Welcome
+      </div>
+      <!-- Overlay -->
+      <div class="overlay" onclick="close()"></div>
+     <!-- Main -->
+    <div id="main" class="flex flex-col justify-center items-center gap-y-7 md:flex-row md:justify-center md:items-center md:gap-14 md:px-20 md:py-9">
+      <!-- Section1 -->
+      <div class="pt-9 md:flex md:flex-col md:justify-center md:items-center md:gap-y-24">
+        <!-- Happy Customer -->
+        <div class="flex justify-center items-center gap-1 md:-translate-x-12">
+            <div class=" w-6 h-6"><img src="./Images/dow.jpg" alt="" width="120%" class="rounded-full"></div>
+            <div class=" w-6 h-6"><img src="./Images/dow.jpg" alt="" width="120%" class="rounded-full"></div>
+            <div id="happy" class=" w-20 h-6 leading-4 text-xl translate-y-[0.1rem] md:text-[1.5rem] md:leading-7 md:-translate-y-[0.8rem]">
+                <div>Happy</div>
+                <div>Customer</div>
+            </div>
+        </div>
+        <!-- Image -->
+        <div class="hidden md:block">
+            <img src="./Images/luxurious-perfume-bottle-mockup-exquisite-perfume-commercial-with-natural-light-rich-rextures_723234-5521.png" alt="" class="md:w-[80%] md:h-[25rem] md:rounded-t-full md:rounded-b-full">
+        </div>
+      </div>
+      <!-- Section2 -->
+      <div id="gradient" class="flex flex-col justify-center items-center gap-y-3 md:pt-10">
+        <div id="happy" class="flex justify-center items-center flex-col text-4xl md:text-[4rem] md:gap-y-5">
+            <div>Best Perfume</div>
+            <div>Collection for you</div>
+        </div>
+        <div id="happy" class="text-[0.6rem] md:text-[1.2rem] md:px-10 md:py-4 md:w-[47vw]">Discover the Best Perfume Collection:Find Your Signature Scent Today</div>
+        <div class="border">
+            <button onclick="open()" id="happy" class=" bg-black text-white text-xs px-6 py-3 rounded-full md:px-9 md:py-5 md:text-[1.5rem]"><a href="">Buy Now</a></button>
+        </div>
+        <div id="essence" class="hidden md:block text-[4.5rem] text-pink-600">essence unleashed</div>
+        <div id="happy" class="hidden md:block md:text-[1.5rem] md:flex md:flex-col md:justify-center md:items-center">
+            <div>Unleash Your</div>
+            <div>Essence with the</div>
+            <div>Every Spritz</div>  
+        </div>
+        <div class="hidden md:block border md:bg-black md:py-8 md:px-2 md:rounded-t-full md:rounded-b-full md:flex">
+            <button id="button">
+                <a href="#main2">
+                    <img src="./Images/arrow_downward_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                </a>
+            </button>
+        </div>
+      </div>
+      <!-- Section3 -->
+      <div class="py-20 md:flex md:flex-col md:justify-center md:items-center md:gap-y-20">
+        <!-- Image -->
+        <div class="relative flex justify-center items-center flex-col">
+            <div id="happy" class="text-[0.7rem] absolute -translate-y-44 border border-white w-30 px-4 py-5 z-[2] rounded-full bg-[#f9f3e2] flex flex-col justify-center items-center md:w-36 md:h-32 md:text-[1.1rem]">
+                <div>Our Unique</div>
+                <div>Product 100%</div>
+                <div>Organic</div>
+            </div>
+            <div id="background" class="-translate-y-3 md:translate-y-8">
+                <img src="./Images/luxury-perfume-bottle-white-background_1021079-1209.jpg" alt="" width="50%" class="rounded-t-full rounded-b-full h-64 w-40 md:w-60 md:h-80">
+            </div>
+        </div>
+        <!-- Learn more -->
+        <div class="underline leading-4 underline-offset-8 flex translate-x-8">
+            <div id="happy"><a href="">Learn More</a></div>
+            <div class="underline underline-offset-8">
+                <a href="">
+                    <img src="./Images/north_east_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                </a>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- Patti -->
+     <div id="happy" class="hidden md:block md:flex md:justify-center md:items-center md:gap-x-20 md:px-20 md:py-6 md:text-[1.2rem] bg-[#f6dad9] border-t-2 border-b-2 border-black">
+        <div>Fragrance Defined</div>
+        <div><img src="./Images/flower.png" alt="" class="w-10"></div>
+        <div>Scent Of Elegance</div>
+        <div><img src="./Images/flower.png" alt="" class="w-10"></div>
+        <div>Perfume Essence</div>
+        <div><img src="./Images/flower.png" alt="" class="w-10"></div>
+        <div>Aroma Inspiration</div>
+        <div><img src="./Images/flower.png" alt="" class="w-10"></div>
+        <div>Signature Scent</div>
+     </div>
+     <!-- main2 -->
+      <div id="main2" class="flex flex-col md:relative justify-center items-center gap-y-4 md:pt-24 md:gap-y-9">
+      <!-- Heading -->
+      <div id="happy" class="flex flex-col justify-center items-center text-[1.4rem] md:text-[3rem]">
+        <div>Top-Selling Perfumes-</div>
+        <div class="flex justify-center items-center flex-row">
+        <div class="-translate-x-8">The Most Popular</div>
+        <div id="best" class="-translate-x-7 text-[1.7rem] md:text-[3rem] text-red-700">and Best</div>
+        </div>
+        <div>Scents of the Year Collection</div>
+      </div>
+      <!-- Perfume Image -->
+       <div class="md:flex md:justify-center md:items-center md:gap-x-10 border md:px-7">
+       <!-- Perfume 1 -->
+      <div class="px-14 flex flex-col justify-center items-center gap-y-4">
+        <div id="boxshadow" class="border rounded-full">
+            <img src="./Images/perfume/pikaso_texttoimage_create-image-of-elie-saab-perfume.jpeg" alt="" class="rounded-t-full rounded-b-full px-0 h-[40vh] w-[80vw] md:h-[60vh] md:w-[70vw]">
+        </div>
+        <div id="happy" class="text-[1.1rem] md:text-[1.6rem]">Elee Sab</div>
+      </div>
+      <!-- perfume2 -->
+      <div class="px-14 flex flex-col justify-center items-center gap-y-4">
+        <div id="boxshadow" class="border rounded-full">
+            <img src="./Images/perfume/pikaso_texttoimage_create-image-of-replica-perfume.jpeg" alt="" class="rounded-t-full rounded-b-full px-0 h-[40vh] w-[80vw] md:h-[60vh] md:w-[70vw]">
+        </div>
+        <div id="happy" class="text-[1.1rem] md:text-[1.6rem]">Respilica</div>
+      </div>
+      <!-- Perfume3 -->
+      <div class="px-14 flex flex-col justify-center items-center gap-y-4">
+        <div id="boxshadow" class="border rounded-full">
+            <img src="./Images/perfume/pikaso_texttoimage_create-image-of-aerin-perfume.jpeg" alt="" class="rounded-t-full rounded-b-full px-0 h-[40vh] w-[80vw] md:h-[60vh] md:w-[70vw]">
+        </div>
+        <div id="happy" class="text-[1.1rem] md:text-[1.6rem]">Aerin</div>
+      </div>
+    </div>
+      <!-- Para -->
+      <div id="happy" class="flex flex-col justify-center items-center text-[0.5rem] px-4 md:text-[1.3rem] md:pb-7 md:font-extralight">
+        <div>Discover the top-selling perfumes in our exclusive collection.</div>
+        <div>Explore the most popular scents of the year,from classic fragrances to trendy new</div>
+        <div>releases.Find your perfect perfume and make a lasting impression</div>
+      </div>
+      <!-- Heading with arrow -->
+       <div class="hidden md:block md:absolute md:flex md:flex-col md:justify-center md:gap-y-10 md:items-center md:translate-x-[260%] md:translate-y-[180%]">
+        <div><img src="./Images/arrow-left.png" alt="" class="md:w-20"></div>
+        <div id="Unique" class="text-[1.5rem] text-pink-600">Unique smells from others</div>
+       </div>
+    </div>
+    <!-- Main3 -->
+     <div class="bg-[#faf0ef] flex flex-col pt-20 md:pb-12 mx-auto md:px-20 md:flex-row md:justify-between md:items-center md:gap-x-10">
+        <div class="relative px-10 w-[fit-content] mx-auto">
+            <div class="sparkle rounded-full">
+                <img src="./Images/output_1200737752_1.jpg" alt="" class="rounded-t-full rounded-b-full  h-[50vh] md:h-[70vh]">
+            </div>
+            <div id="bg-grad" class="hidden md:block md:absolute  md:bottom-0 md:left-44 border-2 rounded-full">
+                <img src="./Images/output_1200737752_0.jpg" alt="" class="md:rounded-t-full md:rounded-b-full  md:h-[50vh]">
+            </div>
+            <div class=" absolute flex flex-row justify-center items-center top-0 right-2 md:right-10">
+            <div id="auto_radius" class=" text-[black]">
+                New Collection of the year with 20% disscountable perfume
+            </div>
+            <div class="">
+                <img src="./Images/sparkle.png" alt="" class="w-[3rem] -translate-x-6">
+            </div>
+            </div>
+            <div id="best" class="absolute -rotate-12 text-[1.6rem] md:text-[2.2rem]  w-44 px-4 -translate-y-[120%] -translate-x-20 text-[#deb86b] flex flex-col justify-center items-center">
+                <div>Best another</div>
+                <div> one of the year </div>
+            </div>
+        </div>
+        <!-- Right side -->
+        <div class="flex flex-col gap-y-2   pb-7 justify-center items-center px-11 md:px-24 md:justify-start md:w-[50vw] md:items-start ">
+            <div id="happy" class="heading text-[1.6rem] md:text-[3rem]">Explore from 20% Discountable Perfume</div>
+            <div id="happy" class="text-[0.9rem] font-extralight md:text-[1.6rem]">Find Your Signature Scent Today and enjoy the smell</div>
+            <div id="happy" class="bg-black text-white rounded-full px-4 py-3"><button><a href="">Explore Now</a></button></div>
+        </div>
+     </div>
+     <!-- main4 -->
+      <div class="flex flex-col justify-center items-center p-7 gap-y-4 bg-[#f6e8e8]">
+        <div id="happy" class="text-xl">Grab Your Signature Scent Today!</div>
+        <div class="flex justify-center items-center gap-x-2">
+            <div id="happy" class="bg-black rounded-2xl text-white px-2 py-2 shadow-2xl shadow-black"><button><a href="#box1">All Perfume</a></button></div>
+            <div id="happy" class="bg-black rounded-2xl text-white px-2 py-2 shadow-2xl shadow-black"><button><a href="#box2">New Collection</a></button></div>
+            <div id="happy" class="bg-black rounded-2xl text-white px-2 py-2 shadow-2xl shadow-black"><button ><a href="#box3">Best Selling</a></button></div>
+            <div id="happy" class="bg-black rounded-2xl text-white px-2 py-2 shadow-2xl shadow-black"><button><a href="#box4">Top Brand</a></button></div>
+        </div>
+      </div>
+      <div id="backgroundimage" class=" text-white w-[100vw] flex flex-col justify-between">
+        <!-- box1 -->
+        <div id="box1" class="gird p-6 top-0 bottom-0 left-0 right-0 w-[100vw]  transition-all duration-500  md:grid-cols-1 md:grid-rows-6">
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full img w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/1.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Essential Greens</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹6,999</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full img w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/2.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Imperial Oud</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹5,999</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full img w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/3.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Royal Saffron</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹8,999</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full img w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/4.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Azure Dreams</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹4,999</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full w-full img rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/5.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Victoria's Bombshell</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹8,499</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/6.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Paco Rabanne</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹7,950</div>
+                </div>
+            </div>
+        </div>
+        <!-- box2 -->
+        <div id="box2" class="gird p-6  transition-all duration-500">
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full img w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/7.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Bvlgari Man in Black</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹8,500</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full img w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/8.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Chanel Gold</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹9,299</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full img w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/9.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Channel Cabrille</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹7,550</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full img w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/10.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Prada L'Homme</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹₹6,500</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full w-full img rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/11.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Dior Sauvage</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹6,120</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/12.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Carolina Herrera</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹7,540</div>
+                </div>
+            </div>
+        </div>
+        <!-- box3 -->
+        <div id="box3" class="gird p-6  transition-all duration-500">
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full img w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/14.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Estee Lauder</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹7,500</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full img w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/15.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Estee Esteem</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹6,550</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full img w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/16.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Mont Blanc Explorer</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹5,500</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full img w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/17.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Versace Dylan Gold</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹6,200</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full w-full img rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/18.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Escada Pink</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹7,950</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/19.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Bvlgari Rose</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹9,200</div>
+                </div>
+            </div>
+        </div>
+        <!-- box4 -->
+        <div id="box4" class="gird p-6  transition-all duration-500">
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full img w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/20.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">D & G Crystal</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹8,000</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full img w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/21.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Daisy Pink</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹5,299</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full img w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/22.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Narciso Rodriguez</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹8,950</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full img w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/23.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Disy Gold</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹6,399</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full w-full img rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/26.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Jeanne Lavin</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹5,799</div>
+                </div>
+            </div>
+            <div class="flex flex-col h-full gap-y-4">
+                <div class="h-[43vh] hover:scale-105 duration-500 transition-all"><img class="h-full w-full rounded-3xl shadow-2xl shadow-black" src="./Images/Slider/25.jpg" alt=""></div>
+                <div class="flex justify-between">
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">Aqua Milgoena</div>
+                    <div id="smell" class="text-[2rem] wwww hover:scale-105 duration-500 transition-all">₹4,225</div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- Form -->
+       <div class="bg-[#fbf2d5] p-14 flex md:p-36 flex-col justify-center items-center gap-y-3">
+        <div id="happy" class="text-[1.5rem] md:text-[3rem] font-semibold">Stay Updated: Subscribe for</div>
+        <div id="happy" class="text-[1.5rem] md:text-[3rem] font-semibold">Exclusive Content</div>
+        <div id="smells" class="text-[0.7rem] md:text-[1.2rem] font-extralight">Subscribe Now: Get Exclusive Updates and Content!</div>
+        <div class="flex gap-x-6">
+            <div class="">
+                <form  action="">
+                    <input class="h-10 md:w-[20vw] rounded-full px-4 bg-pink-100  border-2 border-black" type="text" placeholder="Enter your Email">
+                </form>
+            </div>
+            <div class="bg-black text-[0.5rem] md:text-[1rem] md:px-14 md:w-[15vw] text-white rounded-full px-6 py-2 flex justify-center items-center"><button>Subscribe Now</button></div>
+        </div>
+       </div>
+       <!-- lastsection -->
+        <div class="grid grid-cols-2 items-center md:flex md:justify-between md:px-11 p-6 bg-[#f6e8e8] border-b-2 border-black">
+            <div id="best" class="text-[2rem]">Smell</div>
+            <div class="flex-col space-y-3">
+                <div id="happy" class="text-[1.2rem] font-semibold">Action</div>
+                <div id="happy text-[0.8rem]">
+                    <div>About us</div>
+                    <div>Contact us</div>
+                    <div>Our Team</div>
+                </div>
+            </div>
+            <div class="flex-col space-y-3">
+                <div id="happy" class="text-[1.2rem] font-semibold">Support</div>
+                <div id="happy text-[0.8rem]">
+                    <div>Shopping and returns</div>
+                    <div>Legal and privacy</div>
+                    <div>Track and order</div>
+                </div>
+            </div>
+            <div class="flex space-x-3">
+                <div class=" bg-black text-white rounded-full px-4 py-2"><button><a href="http://instagram.com">Instagram</a></button></div>
+                <div class=" bg-black text-white rounded-full px-4 py-2"><button><a href="http://pinterest.com">Pinterest</a></button></div>
+            </div>
+        </div>
+        <!-- done -->
+         <div class="flex justify-center items-center p-8 bg-[#f6e8e8]">
+            Aroma Hub 2024-2025. All rights reserved.
+         </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+<script>
+    let text = document.getElementById('auto_radius');
+    const rotate = new CircleType(text).radius(60)
+
+    let slides = document.querySelectorAll('#slide');
+</script>
+</body>
+</html>

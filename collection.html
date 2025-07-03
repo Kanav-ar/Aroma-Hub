@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Collections - Smell</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Great+Vibes&display=swap');
+        
+        #navbar {
+            background-image: linear-gradient(to right, #f4da95, #faf3da 80%, #f4da95);
+        }
+        
+        #happy {
+            font-family: "Playfair Display", serif;
+        }
+        
+        .collection-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            cursor: pointer;
+        }
+        
+        .collection-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .collection-card:hover .collection-overlay {
+            transform: translateY(0);
+        }
+        
+        .collection-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar" class="flex justify-around pt-4 md:p-4">
+        <div class="w-[10vw] flex justify-center items-center h-8">
+            <a href="index.html">
+                <img src="./Images/menu_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="" class="md:w-10">
+            </a>   
+        </div>
+        <div id="happy" class="flex gap-2 w-[80vw] h-8 items-center justify-center md:text-2xl md:gap-x-24">
+            <div class="hidden md:block"><a href="index.html">Home</a></div>
+            <div class="hidden md:block"><a href="collection.html">Collection</a></div>
+            <div id="smell" class="md:text-[2.5rem]"><a href="index.html">Aroma Hub</a></div>
+            <div class="hidden md:block"><a href="men.html">Men</a></div>
+            <div class="hidden md:block"><a href="women.html">Women</a></div>
+        </div>
+        <div class="w-[10vw] flex justify-center h-8 items-center">
+            <a href="#">
+                <img src="./Images/shopping_bag_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="" class="md:w-10">
+            </a>   
+        </div>
+    </div>
+
+    <main class="bg-gradient-to-b from-[#f4da95] to-[#f6dad9] min-h-screen">
+        <div class="container mx-auto py-12">
+            <h1 id="happy" class="text-4xl md:text-6xl text-center mb-8">Our Collections</h1>
+            <p id="happy" class="text-center text-xl mb-12">Discover our exclusive fragrance collections</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+                <!-- Collection Cards -->
+                <div class="collection-card">
+                    <img src="./Images/luxurious-perfume-bottle-mockup-exquisite-perfume-commercial-with-natural-light-rich-rextures_723234-5521.png" alt="Luxury Collection" class="collection-image">
+                    <div class="collection-overlay">
+                        <h2 id="happy" class="text-2xl text-white mb-2">Luxury Collection</h2>
+                        <p class="text-white mb-4">Experience the epitome of luxury with our premium fragrances.</p>
+                        <button class="bg-white text-black px-6 py-2 rounded-full hover:bg-gray-200">Explore</button>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <img src="https://images.unsplash.com/photo-1557170334-a9632e77c6e4" alt="Spring Collection" class="collection-image">
+                    <div class="collection-overlay">
+                        <h2 id="happy" class="text-2xl text-white mb-2">Spring Collection</h2>
+                        <p class="text-white mb-4">Fresh and floral scents perfect for the spring season.</p>
+                        <button class="bg-white text-black px-6 py-2 rounded-full hover:bg-gray-200">Explore</button>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <img src="https://images.unsplash.com/photo-1590736704728-f4730bb30770" alt="Evening Collection" class="collection-image">
+                    <div class="collection-overlay">
+                        <h2 id="happy" class="text-2xl text-white mb-2">Evening Collection</h2>
+                        <p class="text-white mb-4">Sophisticated fragrances for special occasions.</p>
+                        <button class="bg-white text-black px-6 py-2 rounded-full hover:bg-gray-200">Explore</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#f6e8e8] py-8">
+        <div class="container mx-auto text-center">
+            <p>© 2024 Smell. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Women's Fragrances - Smell</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Great+Vibes&display=swap');
+        
+        #navbar {
+            background-image: linear-gradient(to right, #f4da95, #faf3da 80%, #f4da95);
+        }
+        
+        #happy {
+            font-family: "Playfair Display", serif;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar" class="flex justify-around pt-4 md:p-4">
+        <div class="w-[10vw] flex justify-center items-center h-8">
+            <a href="index.html">
+                <img src="./Images/menu_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="" class="md:w-10">
+            </a>   
+        </div>
+        <div id="happy" class="flex gap-2 w-[80vw] h-8 items-center justify-center md:text-2xl md:gap-x-24">
+            <div class="hidden md:block"><a href="index.html">Home</a></div>
+            <div class="hidden md:block"><a href="collection.html">Collection</a></div>
+            <div id="smell" class="md:text-[2.5rem]"><a href="index.html">Aroma Hub</a></div>
+            <div class="hidden md:block"><a href="men.html">Men</a></div>
+            <div class="hidden md:block"><a href="women.html">Women</a></div>
+        </div>
+        <div class="w-[10vw] flex justify-center h-8 items-center">
+            <a href="#">
+                <img src="./Images/shopping_bag_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="" class="md:w-10">
+            </a>   
+        </div>
+    </div>
+
+    <main class="bg-gradient-to-b from-[#f4da95] to-[#f6dad9] min-h-screen">
+        <div class="container mx-auto py-12">
+            <h1 id="happy" class="text-4xl md:text-6xl text-center mb-8">Women's Fragrances</h1>
+            <p id="happy" class="text-center text-xl mb-12">Explore our luxurious collection of women's fragrances</p>
+            
+            <div class="product-grid">
+                <!-- Product Cards -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1541643600914-78b084683601" alt="Women's Perfume 1" class="product-image">
+                    <h2 id="happy" class="text-2xl mt-4">Chanel Rose</h2>
+                    <p class="mt-2">A divine blend of Bulgarian rose, jasmine petals, and precious musk.</p>
+                    <p id="happy" class="text-xl mt-2">₹7,299</p>
+                    <button class="bg-black text-white px-6 py-2 rounded-full mt-4 hover:bg-gray-800">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1592914610354-fd354ea45e48" alt="Women's Perfume 2" class="product-image">
+                    <h2 id="happy" class="text-2xl mt-4">Chanel Dreams</h2>
+                    <p class="mt-2">An enchanting fusion of Madagascar vanilla, orchid, and warm amber.</p>
+                    <p id="happy" class="text-xl mt-2">₹7,999</p>
+                    <button class="bg-black text-white px-6 py-2 rounded-full mt-4 hover:bg-gray-800">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75" alt="Women's Perfume 3" class="product-image">
+                    <h2 id="happy" class="text-2xl mt-4">Midnight Jasmine</h2>
+                    <p class="mt-2">A luxurious composition of night-blooming jasmine, white musk, and sandalwood.</p>
+                    <p id="happy" class="text-xl mt-2">₹6,999</p>
+                    <button class="bg-black text-white px-6 py-2 rounded-full mt-4 hover:bg-gray-800">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#f6e8e8] py-8">
+        <div class="container mx-auto text-center">
+            <p>© 2024 Smell. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
